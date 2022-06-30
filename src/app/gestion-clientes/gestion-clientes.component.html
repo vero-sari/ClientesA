@@ -1,0 +1,55 @@
+<!-- <p-toast></p-toast>
+<mat-card>
+  <mat-card-title>-->
+    CREAR CLIENTE
+  <!--</mat-card-title>
+  <div class="container-fluid">
+    <form [formGroup]="formCliente" >-->
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="cedula">Cédula:</label>
+          <input  type="text" class="form-control" id="cedula"
+                  formControlName="cedula" placeholder="Cédula">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="primernombre">Primer Nombre:</label>
+          <input  type="text" class="form-control" id="primerNombre"
+                  formControlName="primerNombre" placeholder="Primer Nombre">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="segundoNombre">Segundo Nombre:</label>
+          <input  type="text" class="form-control" id="segundoNombre"
+                  formControlName="segundoNombre" placeholder="Segundo Nombre">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="primerApellido">Primer Apellido:</label>
+          <input type="text" class="form-control" id="primerApellido"
+                 formControlName="primerApellido" placeholder="Primer Apellido">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="segundoApellido">Segundo Apellido:</label>
+          <input  type="text" class="form-control" id="segundoApellido"
+                  formControlName="segundoApellido" placeholder="Segundo Apellido">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="fechaNac">Nombre del Curso</label>
+          <input type="date" class="form-control" id="fechaNac" formControlName="fechaNac"
+                 placeholder="Ingrese la fecha de nacimiento">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="direccion">Dirección:</label>
+          <input type="text" class="form-control" id="direccion" formControlName="direccion"
+                 placeholder="Ingrese la dirección">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="telefono">Telefono:</label>
+          <input type="text" class="form-control" id="telefono" formControlName="telefono"
+                 placeholder="123456789">
+        </div>
+       
+      </div>
+      <br>
+      
+        <button mat-raised-button color="primary" >Crear Cliente</button>
+
+    
