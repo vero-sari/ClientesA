@@ -5,8 +5,10 @@
   <img src="assets/apecs.jpg">
   <br>
   <br>
-  <button  style="background-color:navy  ; color: white; " [routerLink]="['/gestion-clientes']">CLIENTES</button>
+  <form method="get" action="/gestion-clientes">
+  <button type="submit" style="background-color:navy  ; color: white">CLIENTES</button>
+  </form>
   <br>
   <br>
-  <button style="background-color:rgb(25, 25, 114)  ; color: white; " [routerLink]="['/gestion-visitas']">VISITAS</button>
+  <button style="background-color:navy ; color: white; " [routerLink]="['/gestion-visitas']">VISITAS</button>
 </div>
