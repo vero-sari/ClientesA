@@ -14,7 +14,9 @@ import { GestionVisitasComponent } from './gestion-visitas/gestion-visitas.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
