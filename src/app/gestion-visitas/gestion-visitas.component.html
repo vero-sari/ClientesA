@@ -1,1 +1,24 @@
-<p>gestion-visitas works!</p>
+<!DOCTYPE html>
+<div>
+    CREAR VISITA
+</div>
+<div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="fecha">Fecha:</label>
+      <input  type="text" class="form-control" id="fecha"
+              formControlName="fecha" placeholder="aaaa/mm/dd">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="hora">Hora:</label>
+      <input  type="text" class="form-control" id="hora"
+              formControlName="hora" placeholder="hora">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="observacion">Observacion:</label>
+      <input  type="text" class="form-control" id="observacion"
+              formControlName="Observacion" placeholder="observacion">
+    </div>
+    
+  <br>
+  
+    <button mat-raised-button color="primary" >GUARDAR VISITA</button>
