@@ -1,7 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+<link rel="stylesheet" href="styles.css">
+
+
+<div id="main" ng-app>
+<nav class="{{active}}" ng-click="$event.preventDefault()" ng-init="active='inicio'">
+<a href="/app.component" class="inicio">INICIO</a>
+<a href="/gestion-clientes" class="clientes">CLIENTES</a>
+<a href="/gestion-visitas" class="visitas">VISITAS</a>
+</nav>
+<meta charset="utf-8">
   <title>APECS</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,5 +16,7 @@
 <body>
   <app-root></app-root>
 </body>
-</html>
+</div>
+
+<router-outlet></router-outlet>
 
