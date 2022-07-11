@@ -10,6 +10,8 @@ export class GestionClientesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("gsf");
+    
   }
 
 }

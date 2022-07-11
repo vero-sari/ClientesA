@@ -14,3 +14,8 @@ h1{
     height: 300px;
     max-width: 300vm;
   }
+
+  .btn{
+    background-color:navy  ; 
+    color: white;
+  }
