@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GestionClientesComponent } from './gestion-clientes/gestion-clientes.component';
 import { GestionVisitasComponent } from './gestion-visitas/gestion-visitas.component';
 import { MenuComponent } from './menu/menu.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatToolbarModule,
    
     
   ],
