@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'APECS';
 
-  constructor(private router:Router) { }
+  constructor(private router:Router) { 
+    
+  }
 
   gestionCliente(){
     this.router.navigate(['/gestion-clientes']);
