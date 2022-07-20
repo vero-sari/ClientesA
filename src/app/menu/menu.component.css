@@ -1,0 +1,16 @@
+h1{
+    color: black;
+    font-size:30px;
+    text-align: center;
+  }
+  
+  img {
+    position: relative;
+    right: 100%;
+    left: 100%;
+    margin-right: -100w;
+    margin-left: -100vw;
+    width:80vw;
+    height: 500px;
+    max-width: 300vm;
+  }
