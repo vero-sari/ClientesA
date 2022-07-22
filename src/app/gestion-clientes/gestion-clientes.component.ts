@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 
 @Component({
@@ -9,8 +9,10 @@ import { ClienteService } from '../service/cliente.service';
 })
 export class GestionClientesComponent implements OnInit {
   cliente: any;
-  formCliente: FormGroup;
+formCliente:any;
   constructor(
+    
+    private formBuilder: FormBuilder,
     private clienteservice:ClienteService
   ) { }
 

@@ -7,26 +7,26 @@ import { visita } from "../models/visita";
 import Swal from 'sweetalert2';
 
 @Injectable({
-    providedIn: 'root'
-  })
-  export class ClienteService{
-    _url="localhost:9898/ListaClientes"
-    private urlCreate: string = this._url+'/CrearCliente';
-    private urlDelete: string = this._url+'/EliminarCliente/{id}';
-    private urlUpdate: string = this._url+'//EditarCliente/{id}';
-    private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
+  providedIn: 'root'
+})
+export class ClienteService {
+  _url = "localhost:9898/ListaClientes"
+  private urlCreate: string = this._url + '/CrearCliente';
+  private urlDelete: string = this._url + '/EliminarCliente/{id}';
+  private urlUpdate: string = this._url + '//EditarCliente/{id}';
+  private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 
-    constructor(private http: HttpClient, private router: Router) { }
-    
+  constructor(private http: HttpClient, private router: Router) { }
 
-    getClientes():Observable<cliente[]>{
-        let header = new HttpHeaders()
-        .set('Type-content','aplication/json')
-        return this.http.get<cliente[]>(this._url,{
-            headers: header
-        });
+
+  getClientes(): Observable<cliente[]> {
+    let header = new HttpHeaders()
+      .set('Type-content', 'aplication/json')
+    return this.http.get<cliente[]>(this._url, {
+      headers: header
+    });
   }
-  createCliente(doc: cliente, ced :String, id : number): Observable<cliente> {
+  createCliente(doc: cliente, ced: String, id: number): Observable<cliente> {
     return this.http.post<cliente>(`${this.urlCreate}/${ced}/${id}`, doc, { headers: this.httpHeaders }).pipe(
       catchError(e => {
         Swal.fire('Error al guardar', 'NO se puede guardar al cliente', 'error')
@@ -44,7 +44,7 @@ import Swal from 'sweetalert2';
     );
   }
 
-  updateCliente(emp: cliente, ced : String): Observable<cliente> {
+  updateCliente(emp: cliente, ced: String): Observable<cliente> {
     return this.http.put<cliente>(`${this.urlUpdate}/${ced}`, emp, { headers: this.httpHeaders }).pipe(
       catchError(e => {
         Swal.fire('Error al actualizar', 'NO se puede actualizar el cliente', 'error')
@@ -52,4 +52,4 @@ import Swal from 'sweetalert2';
       })
     );
   }
-  }
+}
