@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { GestionClientesComponent } from './gestion-clientes/gestion-clientes.component';
 import { GestionVisitasComponent } from './gestion-visitas/gestion-visitas.component';
 import { MenuComponent } from './menu/menu.component';
+import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
+import { ListaVisitasComponent } from './lista-visitas/lista-visitas.component';
 
 
 
@@ -14,7 +16,9 @@ import { MenuComponent } from './menu/menu.component';
     AppComponent,
     GestionClientesComponent,
     GestionVisitasComponent,
-    MenuComponent
+    MenuComponent,
+    ListaClientesComponent,
+    ListaVisitasComponent
   ],
   imports: [
     BrowserModule,

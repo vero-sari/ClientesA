@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { ClienteService } from '../service/cliente.service';
 
 @Component({
   selector: 'app-gestion-clientes',
@@ -6,12 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gestion-clientes.component.css']
 })
 export class GestionClientesComponent implements OnInit {
-
-  constructor() { }
+  cliente: any;
+  formCliente: FormGroup;
+  constructor(
+    private clienteservice:ClienteService
+  ) { }
 
   ngOnInit(): void {
-    console.log("gsf");
-    
+    this.formCliente = this.formBuilder.group({
+    cedula: ['', Validators.required],
+    primerNombre: ['', Validators.required],
+    segundoNombre: ['', Validators.required],
+    primerApellido: ['', Validators.required],
+    segundoApellido: ['', Validators.required],
+    telefono: ['', Validators.required],
+    direccion: ['', Validators.required],
+    });  
   }
 
 }
