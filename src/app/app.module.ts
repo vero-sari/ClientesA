@@ -10,6 +10,7 @@ import { ListaClientesComponent } from './lista-clientes/lista-clientes.componen
 import { ListaVisitasComponent } from './lista-visitas/lista-visitas.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { MatCardModule } from '@angular/material/card';
     AppRoutingModule,
      MatToolbarModule,
      MatCardModule,
-
+     MatIconModule,
   ],
      
   

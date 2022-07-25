@@ -11,13 +11,13 @@ export class GestionClientesComponent implements OnInit {
   cliente: any;
 formCliente:any;
   constructor(
-    
+  /*  
     private formBuilder: FormBuilder,
-    private clienteservice:ClienteService
+    private clienteservice:ClienteService*/
   ) { }
 
   ngOnInit(): void {
-    this.formCliente = this.formBuilder.group({
+   /* this.formCliente = this.formBuilder.group({
     cedula: ['', Validators.required],
     primerNombre: ['', Validators.required],
     segundoNombre: ['', Validators.required],
@@ -25,7 +25,7 @@ formCliente:any;
     segundoApellido: ['', Validators.required],
     telefono: ['', Validators.required],
     direccion: ['', Validators.required],
-    });  
+    });  */
   }
 
 }

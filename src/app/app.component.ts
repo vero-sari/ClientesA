@@ -13,12 +13,8 @@ export class AppComponent implements OnInit {
 
   }
 
-  gestionCliente(){
-    this.router.navigate(['/gestion-clientes']);
-    console.log('hola');
-
-  }
+ 
   ngOnInit(): void {
-      
+   
   }
 }
