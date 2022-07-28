@@ -10,10 +10,11 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class ClienteService {
-  _url = "localhost:9898/ListaClientes"
+  _url = "localhost:9898/apecs"
   private urlCreate: string = this._url + '/CrearCliente';
   private urlDelete: string = this._url + '/EliminarCliente/{id}';
-  private urlUpdate: string = this._url + '//EditarCliente/{id}';
+  private urlUpdate: string = this._url + '/EditarCliente/{id}';
+  private urlGet :string=this._url +'/ListaClientes';
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -22,7 +23,7 @@ export class ClienteService {
   getClientes(): Observable<cliente[]> {
     let header = new HttpHeaders()
       .set('Type-content', 'aplication/json')
-    return this.http.get<cliente[]>(this._url, {
+    return this.http.get<cliente[]>(this.urlGet, {
       headers: header
     });
   }

@@ -8,15 +8,16 @@ import Swal from 'sweetalert2';
     providedIn: 'root'
   })
   export class VisitaService{
-    _url="localhost:9898/ListaVisitas"
-    private urlCreate: string = this._url+'/CrearCliente';
-    private urlDelete: string = this._url+'/EliminarCliente/{id}';
-    private urlUpdate: string = this._url+'//EditarCliente/{id}';
+    _url="localhost:9898/apecs"
+    private urlCreate: string = this._url+'/CrearVisita';
+    private urlDelete: string = this._url+'/EliminarVista/{id}';
+    private urlUpdate: string = this._url+'/EditarVisita/{id}';
+    private urlGet :string=this._url+'ListaVisitas';
     private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
   
     constructor(private http: HttpClient, private router: Router) { }
 
-    getVisitas():Observable<visita[]>{
+    getAllVisitas():Observable<visita[]>{
         let header = new HttpHeaders()
         .set('Type-content','aplication/json')
         return this.http.get<visita[]>(this._url,{
