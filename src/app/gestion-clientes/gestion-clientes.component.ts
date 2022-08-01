@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Cliente } from '../models/Cliente';
+
+
 import { ClienteService } from '../service/cliente.service';
 
 @Component({
@@ -8,24 +12,27 @@ import { ClienteService } from '../service/cliente.service';
   styleUrls: ['./gestion-clientes.component.css']
 })
 export class GestionClientesComponent implements OnInit {
-  cliente: any;
-formCliente:any;
+formCliente:FormGroup;
+clientes: Cliente[];
+cliente: Cliente=new Cliente();
+    
   constructor(
-  /*  
+    private router: Router,
     private formBuilder: FormBuilder,
-    private clienteservice:ClienteService*/
-  ) { }
+    private clienteService:ClienteService
+   ) { }
 
   ngOnInit(): void {
-   /* this.formCliente = this.formBuilder.group({
-    cedula: ['', Validators.required],
-    primerNombre: ['', Validators.required],
-    segundoNombre: ['', Validators.required],
-    primerApellido: ['', Validators.required],
-    segundoApellido: ['', Validators.required],
-    telefono: ['', Validators.required],
-    direccion: ['', Validators.required],
-    });  */
+    this.cliente=new Cliente();
+   this.listaClientes();
   }
+  listaClientes(){
+    this.clienteService.getClientes().subscribe((resp: any)=>{
+      console.log(resp.data)
+      this.cliente = resp.data
+    }
+    )
+  }
+
 
 }

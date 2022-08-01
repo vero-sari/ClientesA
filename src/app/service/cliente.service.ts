@@ -2,8 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { catchError, Observable, throwError } from "rxjs";
-import { cliente } from "../models/cliente";
-import { visita } from "../models/visita";
+import { Cliente } from "../models/Cliente";
 import Swal from 'sweetalert2';
 
 @Injectable({
@@ -20,15 +19,15 @@ export class ClienteService {
   constructor(private http: HttpClient, private router: Router) { }
 
 
-  getClientes(): Observable<cliente[]> {
+  getClientes(): Observable<Cliente[]> {
     let header = new HttpHeaders()
       .set('Type-content', 'aplication/json')
-    return this.http.get<cliente[]>(this.urlGet, {
+    return this.http.get<Cliente[]>(this.urlGet, {
       headers: header
     });
   }
-  createCliente(doc: cliente, ced: String, id: number): Observable<cliente> {
-    return this.http.post<cliente>(`${this.urlCreate}/${ced}/${id}`, doc, { headers: this.httpHeaders }).pipe(
+  createCliente(doc: Cliente, ced: String, id: number): Observable<Cliente> {
+    return this.http.post<Cliente>(`${this.urlCreate}/${ced}/${id}`, doc, { headers: this.httpHeaders }).pipe(
       catchError(e => {
         Swal.fire('Error al guardar', 'NO se puede guardar al cliente', 'error')
         return throwError(e);
@@ -36,8 +35,8 @@ export class ClienteService {
     );
   }
 
-  deleteCliente(empid: String): Observable<cliente> {
-    return this.http.delete<cliente>(`${this.urlDelete}/${empid}`, { headers: this.httpHeaders }).pipe(
+  deleteCliente(empid: String): Observable<Cliente> {
+    return this.http.delete<Cliente>(`${this.urlDelete}/${empid}`, { headers: this.httpHeaders }).pipe(
       catchError(e => {
         Swal.fire('Error al eliminar', 'No se puede eliminar', 'error')
         return throwError(e);
@@ -45,8 +44,8 @@ export class ClienteService {
     );
   }
 
-  updateCliente(emp: cliente, ced: String): Observable<cliente> {
-    return this.http.put<cliente>(`${this.urlUpdate}/${ced}`, emp, { headers: this.httpHeaders }).pipe(
+  updateCliente(emp: Cliente, ced: String): Observable<Cliente> {
+    return this.http.put<Cliente>(`${this.urlUpdate}/${ced}`, emp, { headers: this.httpHeaders }).pipe(
       catchError(e => {
         Swal.fire('Error al actualizar', 'NO se puede actualizar el cliente', 'error')
         return throwError(e);
