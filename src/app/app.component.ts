@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ClienteService } from './service/cliente.service';
+import { VisitaService } from './service/visita.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,12 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'APECS';
 
-  constructor(private router:Router) { 
+  constructor(
+    private router:Router,
+    public fb:FormBuilder,
+    public clienteService:ClienteService,
+    public visitaServuce:VisitaService,
+    ) { 
 
   }
 
