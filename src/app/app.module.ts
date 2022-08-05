@@ -11,6 +11,7 @@ import { ListaVisitasComponent } from './lista-visitas/lista-visitas.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {MatIconModule} from '@angular/material/icon';
      MatToolbarModule,
      MatCardModule,
      MatIconModule,
+     ReactiveFormsModule,
   ],
      
   

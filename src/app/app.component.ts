@@ -14,15 +14,15 @@ export class AppComponent implements OnInit {
 
   constructor(
     private router:Router,
-    public fb:FormBuilder,
-    public clienteService:ClienteService,
-    public visitaServuce:VisitaService,
+     
     ) { 
 
   }
 
  
   ngOnInit(): void {
-   
+  
+
+  
   }
 }

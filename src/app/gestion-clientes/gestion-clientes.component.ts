@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder,  FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Cliente } from '../models/Cliente';
 import { ClienteService } from '../service/cliente.service';
 
 @Component({
@@ -9,14 +10,17 @@ import { ClienteService } from '../service/cliente.service';
   styleUrls: ['./gestion-clientes.component.css']
 })  
 export class GestionClientesComponent implements OnInit {
-
-    
+ 
+  clientes:Cliente[]=[];
   constructor(
-    
+    /*private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private clienteservice: ClienteService,*/
+  
    ) { }
 
   ngOnInit(): void {
-  
+ 
   }
   listaClientes(){
    
