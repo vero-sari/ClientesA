@@ -13,19 +13,14 @@ export class GestionClientesComponent implements OnInit {
  
   clientes:Cliente[]=[];
   constructor(
-    /*private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private clienteservice: ClienteService,*/
+    private clienteService:ClienteService
   
    ) { }
 
   ngOnInit(): void {
  
   }
-  listaClientes(){
-   
-   
-  }
+
 
 
 }

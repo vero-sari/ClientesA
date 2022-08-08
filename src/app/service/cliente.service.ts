@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class ClienteService {
-  _url = "localhost:9898/apecs"
+  _url = "localhost:9898"
   private urlCreate: string = this._url + '/CrearCliente';
   private urlDelete: string = this._url + '/EliminarCliente/{id}';
   private urlUpdate: string = this._url + '/EditarCliente/{id}';

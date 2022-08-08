@@ -10,7 +10,7 @@ import { Visita } from "../models/Visita";
     providedIn: 'root'
   })
   export class VisitaService{
-    _url="localhost:9898/apecs"
+    _url="localhost:9898"
     private urlCreate: string = this._url+'/CrearVisita';
     private urlDelete: string = this._url+'/EliminarVista/{id}';
     private urlUpdate: string = this._url+'/EditarVisita/{id}';

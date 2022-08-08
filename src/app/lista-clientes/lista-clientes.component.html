@@ -4,22 +4,20 @@
     <thead>
         <tr class="text-center">
             <th>Cedula</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Nombre del curso</th>
+            <th>Nombres</th>                                                            
             <th>Teléfono</th>
              <th>Dirección</th>
+             <th>Nombre del curso</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>01010231569</td>
-            <td>Juan</td>
-            <td>Espinoza</td>
-            <td>Microsoft Excel</td>
-            <th>0987642123</th>
-            <td>Batan</td>
+        <tr *ngFor="let cliente of  clientes">
+            <th scope="row">{{cliente.id}}</th>
+            <td>estudiante.nombre</td>
+            <td>estudiante.telefono</td>
+            <td>estudiante.direccion</td>
+            <td>estudiante.nombre_curso</td>
             <td>
                 <a mat-icon-button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                 <a class="delete" title="Delet" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
