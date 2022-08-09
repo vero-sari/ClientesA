@@ -6,6 +6,7 @@
 
     </div>
     <br>
+    <form></form>
   </mat-card-title>
   <div class="container-fluid">
    
@@ -13,55 +14,46 @@
         <div class="form-group col-md-3">
           <label for="cedula">Cédula:</label>
           <input  type="text" class="form-control" id="cedula"
-                  formControlName="cedula" placeholder="Cédula">
+                  formControlName="cedula" placeholder="Cédula" [(ngModel)]="cliente.id">
         </div>
         <br>
         <div class="form-group col-md-3">
-          <label for="primernombre">Primer Nombre:</label>
-          <input  type="text" class="form-control" id="primerNombre"
-                  formControlName="primerNombre" placeholder="Primer Nombre">
+          <label for="nombre">Nombre :</label>
+          <input  type="text" class="form-control" id="Nombre"
+                  formControlName="Nombre" placeholder="Nombre"[(ngModel)]="cliente.nombre">
         </div>
         <br>
+        
         <div class="form-group col-md-3">
-          <label for="segundoNombre">Segundo Nombre:</label>
-          <input  type="text" class="form-control" id="segundoNombre"
-                  formControlName="segundoNombre" placeholder="Segundo Nombre">
+          <label for="Apellido"> Apellido:</label>
+          <input type="text" class="form-control" id="Apellido"
+                 formControlName="Apellido" placeholder="Apellido" [(ngModel)]="cliente.apellido">
         </div>
-        <br>
-        <div class="form-group col-md-3">
-          <label for="primerApellido">Primer Apellido:</label>
-          <input type="text" class="form-control" id="primerApellido"
-                 formControlName="primerApellido" placeholder="Primer Apellido">
-        </div>
-        <br>
-        <div class="form-group col-md-3">
-          <label for="segundoApellido">Segundo Apellido:</label>
-          <input  type="text" class="form-control" id="segundoApellido"
-                  formControlName="segundoApellido" placeholder="Segundo Apellido">
-        </div>
+       
         <br>
         <div class="form-group col-md-3">
           <label for="fechaNac">Nombre del Curso</label>
           <input type="text" class="form-control" id="Curso" formControlName="curso"
-                 placeholder="Ingrese el nombre del curso">
+                 placeholder="Ingrese el nombre del curso" [(ngModel)]="cliente.nombre_curso">
         </div>
         <br>
         <div class="form-group col-md-3">
           <label for="direccion">Dirección:</label>
           <input type="text" class="form-control" id="direccion" formControlName="direccion"
-                 placeholder="Ingrese la dirección">
+                 placeholder="Ingrese la dirección" [(ngModel)]="cliente.direccion">
         </div>
         <br>
         <div class="form-group col-md-3">
           <label for="telefono">Telefono:</label>
           <input type="text" class="form-control" id="telefono" formControlName="telefono"
-                 placeholder="123456789">
+                 placeholder="123456789" [(ngModel)]="cliente.telefono">
         </div>
+      
         <br>
       </div>
       <br>
       
-        <button mat-raised-button color="primary" class="btn" >GUARDAR CLIENTE</button>
+        <button mat-raised-button color="primary" class="btn" (click)='create()'>GUARDAR CLIENTE</button>
         <br>
     <br>
         <button mat-raised-button color="primary" class="btn" routerLink="/lista-cliente">LISTA</button>

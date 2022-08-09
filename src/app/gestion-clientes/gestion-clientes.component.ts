@@ -10,17 +10,23 @@ import { ClienteService } from '../service/cliente.service';
   styleUrls: ['./gestion-clientes.component.css']
 })  
 export class GestionClientesComponent implements OnInit {
- 
+ cliente:Cliente=new Cliente();
+ titulo:string="Registro Cliente";
   clientes:Cliente[]=[];
   constructor(
-    private clienteService:ClienteService
-  
+    private clienteService:ClienteService,
+  private router:Router
    ) { }
 
   ngOnInit(): void {
  
   }
 
-
+create():void{
+  console.log(this.cliente);
+  this.clienteService.createCliente(this.cliente).subscribe(
+    res=>this.router.navigate(['/CrearCliente'])
+  );
+}
 
 }

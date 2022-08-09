@@ -26,8 +26,8 @@ export class ClienteService {
       headers: header
     });
   }
-  createCliente(doc: Cliente, ced: String, id: number): Observable<Cliente> {
-    return this.http.post<Cliente>(`${this.urlCreate}/${ced}/${id}`, doc, { headers: this.httpHeaders }).pipe(
+  createCliente(doc: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(`${this.urlCreate}`, doc, { headers: this.httpHeaders }).pipe(
       catchError(e => {
         Swal.fire('Error al guardar', 'NO se puede guardar al cliente', 'error')
         return throwError(e);

@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule  } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { Routes, RouterModule  } from '@angular/router';
      MatCardModule,
      MatIconModule,
      ReactiveFormsModule,
+    FormsModule,
   ],
      
   
