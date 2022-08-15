@@ -15,11 +15,13 @@ export class GestionClientesComponent implements OnInit {
   clientes:Cliente[]=[];
   constructor(
     private clienteService:ClienteService,
-  private router:Router
+  private router:Router,
+  private activateRoute:ActivatedRoute
    ) { }
 
   ngOnInit(): void {
- 
+ this.cargar
+ this.create
   }
 
 create():void{
@@ -28,5 +30,21 @@ create():void{
     res=>this.router.navigate(['/CrearCliente'])
   );
 }
-
+update():void{
+  this.clienteService.updateCliente(this.cliente).subscribe(
+    res=>this.router.navigate(['/CrearCliente'])
+  );
+}
+cargar():void{
+this.activateRoute.params.subscribe(
+  e=>{
+    let id=e['id'];
+    if(id){
+      this.clienteService.get(id).subscribe(
+        es=>this.cliente=es
+      );
+    }
+  }
+);
+}
 }

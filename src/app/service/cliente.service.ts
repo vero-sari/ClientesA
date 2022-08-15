@@ -18,7 +18,9 @@ export class ClienteService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-
+get(id:any):Observable<Cliente>{
+  return this.http.get<Cliente>(this._url);
+}
   getClientes(): Observable<Cliente[]> {
     let header = new HttpHeaders()
       .set('Type-content', 'aplication/json')
@@ -44,8 +46,8 @@ export class ClienteService {
     );
   }
 
-  updateCliente(emp: Cliente, ced: String): Observable<Cliente> {
-    return this.http.put<Cliente>(`${this.urlUpdate}/${ced}`, emp, { headers: this.httpHeaders }).pipe(
+  updateCliente( id: any): Observable<Cliente> {
+    return this.http.put<Cliente>(`${this.urlUpdate}/${id}`, { headers: this.httpHeaders }).pipe(
       catchError(e => {
         Swal.fire('Error al actualizar', 'NO se puede actualizar el cliente', 'error')
         return throwError(e);

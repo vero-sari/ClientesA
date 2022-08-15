@@ -18,7 +18,9 @@ import { Visita } from "../models/Visita";
     private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
   
     constructor(private http: HttpClient, private router: Router) { }
-
+    get(id:any):Observable<Visita>{
+      return this.http.get<Visita>(this._url);
+    }
     getAllVisitas():Observable<Visita[]>{
         let header = new HttpHeaders()
         .set('Type-content','aplication/json')
@@ -27,8 +29,8 @@ import { Visita } from "../models/Visita";
         });
   }
 
-createVisita(doc: Visita, ced :String, id : number): Observable<Visita> {
-  return this.http.post<Visita>(`${this.urlCreate}/${ced}/${id}`, doc, { headers: this.httpHeaders }).pipe(
+createVisita( id : any): Observable<Visita> {
+  return this.http.post<Visita>(`${this.urlCreate}/${id}`,  { headers: this.httpHeaders }).pipe(
     catchError(e => {
       Swal.fire('Error al guardar', 'NO se puede guardar la visita', 'error')
       return throwError(e);
@@ -45,8 +47,8 @@ deleteVisita(empid: String): Observable<Visita> {
   );
 }
 
-updateVisita(emp: Visita, ced : String): Observable<Visita> {
-  return this.http.put<Visita>(`${this.urlUpdate}/${ced}`, emp, { headers: this.httpHeaders }).pipe(
+updateVisita(id:any): Observable<Visita> {
+  return this.http.put<Visita>(`${this.urlUpdate}/${id}`, { headers: this.httpHeaders }).pipe(
     catchError(e => {
       Swal.fire('Error al actualizar', 'NO se puede actualizar la visita', 'error')
       return throwError(e);

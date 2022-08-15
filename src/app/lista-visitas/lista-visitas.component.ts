@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Visita } from '../models/Visita';
+import { VisitaService } from '../service/visita.service';
 
 @Component({
   selector: 'app-lista-visitas',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-visitas.component.css']
 })
 export class ListaVisitasComponent implements OnInit {
-
-  constructor() { }
+visitas:Visita[]=[];
+  constructor(
+    private visitaService:VisitaService
+  ) { }
 
   ngOnInit(): void {
-  }
+    this.visitaService.getAllVisitas().subscribe(
+      v=>this.visitas=v
+    );
 
+  }
+delete(visita:Visita):void{
+console.log("Eliminar");
+this.visitaService.deleteVisita(visita.idvisita).subscribe(
+  res=>this.visitaService.getAllVisitas().subscribe(
+response=>this.visitas=response
+  )
+);
+}
 }

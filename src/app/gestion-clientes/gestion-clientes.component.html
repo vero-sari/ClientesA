@@ -53,8 +53,12 @@
       </div>
       <br>
       
-        <button mat-raised-button color="primary" class="btn" (click)='create()'>GUARDAR CLIENTE</button>
+        <button mat-raised-button color="primary" class="btn" (click)='create()' *ngIf="!cliente.id else elseBlock">GUARDAR CLIENTE</button>
         <br>
+        <ng-template #elseBlock> 
+        <button mat-raised-button color="primary" class="btn" (click)='update()'>ACTUALIZAR</button>
+        <br>
+      </ng-template>
     <br>
         <button mat-raised-button color="primary" class="btn" routerLink="/lista-cliente">LISTA</button>
     <div>

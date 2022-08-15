@@ -19,5 +19,12 @@ export class ListaClientesComponent implements OnInit {
       c =>this.clientes=c
      );
   }
-
+delete(cliente:Cliente):void{
+console.log("Eliminar");
+this.clienteService.deleteCliente(cliente.id).subscribe(
+  res=>this.clienteService.getClientes().subscribe(
+response=>this.clientes=response
+  )
+);
+}
 }

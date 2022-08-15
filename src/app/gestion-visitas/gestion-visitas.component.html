@@ -30,8 +30,12 @@
     
   <br>
   
-    <button mat-raised-button color="primary" class="btn">GUARDAR VISITA</button>
-       
+    <button mat-raised-button color="primary" class="btn" (click)='create()' *ngIf="!visita.idvisita else elseBlock">GUARDAR VISITA</button>
+    <br>
+    <ng-template #elseBlock> 
+    <button mat-raised-button color="primary" class="btn" (click)='update()'>ACTUALIZAR</button>
+    <br>
+  </ng-template>   
   <br>
   <br>
   <button mat-raised-button color="primary" class="btn" routerLink="/lista-visita">LISTA</button>

@@ -14,13 +14,13 @@
     <tbody>
         <tr *ngFor="let cliente of  clientes">
             <th scope="row">{{cliente.id}}</th>
-            <td>estudiante.nombre</td>
-            <td>estudiante.telefono</td>
-            <td>estudiante.direccion</td>
-            <td>estudiante.nombre_curso</td>
+            <td>cliente.nombre</td>
+            <td>cliente.telefono</td>
+            <td>cliente.direccion</td>
+            <td>cliente.nombre_curso</td>
             <td>
-                <a mat-icon-button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a class="delete" title="Delet" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                <button type="button" name="button" class="btn btn-primary" [routerLink]="['/clientes/form',cliente.id]">Editar</button>
+                <button class="btn btn-danger" (click)="delete(cliente)">Eliminar</button>
                 
             </td>
         </tr>

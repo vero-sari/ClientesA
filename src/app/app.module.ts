@@ -15,6 +15,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule  } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
+const router:Routes=[
+{path:' ',redirectTo:'/clientes',pathMatch:'full'},
+  {path:'clientes/form',component:GestionClientesComponent},
+  {path:'clientes/form/:id', component:GestionClientesComponent},
+  {path:'visita/form/:id', component:GestionVisitasComponent},
+]
+
 @NgModule({
   declarations: [
     AppComponent,
