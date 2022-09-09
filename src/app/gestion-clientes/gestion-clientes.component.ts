@@ -20,8 +20,8 @@ export class GestionClientesComponent implements OnInit {
    ) { }
 
   ngOnInit(): void {
- this.cargar
- this.create
+ this.cargar();
+ 
   }
 
 create():void{

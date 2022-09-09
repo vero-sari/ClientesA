@@ -11,7 +11,7 @@ import { Visita } from "../models/Visita";
   })
   export class VisitaService{
     _url="localhost:9898"
-    private urlCreate: string = this._url+'/CrearVisita';
+    private urlCreate: string =  "http://localhost:9898/CrearVisita";
     private urlDelete: string = this._url+'/EliminarVista/{id}';
     private urlUpdate: string = this._url+'/EditarVisita/{id}';
     private urlGet :string=this._url+'ListaVisitas';
